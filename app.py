@@ -3,6 +3,9 @@ import base64
 from io import BytesIO
 from PIL import Image
 import os
+from hloc import extract_features, match_features, reconstruction, visualization, pairs_from_exhaustive
+from hloc.visualization import plot_images, read_image
+from hloc.utils import viz_3d
 
 app = Flask(__name__)
 
@@ -26,6 +29,7 @@ def process_image():
     img.save('image.jpg', 'jpeg')
 
     return 'OK'
+
 
 if __name__ == '__main__':
     app.run()
