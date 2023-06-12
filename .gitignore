@@ -2,6 +2,7 @@
 Hierarchical-Localization/
 koe-datasets/
 outputs/
+images_temp/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
