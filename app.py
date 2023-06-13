@@ -42,22 +42,14 @@ def process_image():
 
     saved_new_path = resize_image(temp_save_path)
 
+    print('saved_new_path = ', saved_new_path)
+
     result = my_hloc.check_location(saved_new_path)
 
     if result == None:
         return {"result": "No match found"}, 404
 
     return {"result": result}, 200
-
-i = 0
-
-
-@app.route('/test', methods=['POST'])
-def test_endpoint():
-    global i
-    i =+ 1
-    # result = my_hloc.check_location('night/e1-l2-conference-room-b_3.jpg')
-    return str(i)
 
 def resize_image(image_path):
     # open the image file
@@ -69,11 +61,12 @@ def resize_image(image_path):
     # calculate the height of the cropped area to maintain a 3:4 aspect ratio
     cropped_height = int(width * 4 / 3)
 
-    # define the top-left and bottom-right coordinates of the crop area
+    # define the crop area
+    # gambaran cropping area: https://imgur.com/2SDm80v.png
     left = 0
-    top = 0
+    top = 140
     right = width
-    bottom = cropped_height
+    bottom = cropped_height + top
 
     # crop the image
     res_image = image.crop((left, top, right, bottom))
@@ -107,4 +100,5 @@ def resize_image(image_path):
     
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    app.run()

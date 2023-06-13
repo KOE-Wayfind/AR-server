@@ -30,10 +30,10 @@ def main():
         return selected_images
 
     # Choose between color and grayscale
-    color_mode = "gray"
+    color_mode = "color"
 
     # Choose the number of images from each folder
-    num_images = 12
+    num_images = 14
 
     exclude_dirs = ["conference-b"]
 
