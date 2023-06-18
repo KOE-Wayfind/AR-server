@@ -86,6 +86,7 @@ def check_location(query = str):
     print(possible_locations)
 
     # mapping to the actual location
+    # must match the value in OriginTargets in MainARNavigation Scene
     if "conference-a" in possible_locations[0]:
         return "Conference Room A"
     elif "conference-b" in possible_locations[0]:

@@ -11,5 +11,10 @@
       "ghcr.io/devcontainers/features/nvidia-cuda:1": {
         "installCudnn": true
       }
-    }
+	},
+	"portsAttributes": {
+		"5000": {
+			"label": "Server Endpoint"
+		}
+	}
   }
