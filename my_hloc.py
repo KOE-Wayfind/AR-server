@@ -30,11 +30,14 @@ def main():
         return selected_images
 
     # Choose between color and grayscale
+    # note that under the hood, the suprrpoint algorithm already preprocess to grayscale
+    # images. See Hierarchical-Localization/hloc/extract_features.py
     color_mode = "color"
 
     # Choose the number of images from each folder
     num_images = 14
 
+    # landmarks to be exlucluded from the "training"
     exclude_dirs = ["conference-b"]
 
     references = []

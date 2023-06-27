@@ -2,9 +2,10 @@
     "customizations": {
       "vscode": {
         "extensions": [
-          "ms-python.python",
-          "ms-toolsai.jupyter"
-        ]
+			"ms-python.python",
+			"ms-toolsai.jupyter",
+			"rangav.vscode-thunder-client"
+		]
       }
     },
     "features": {
