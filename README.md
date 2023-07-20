@@ -21,7 +21,7 @@ Run
 sudo apt update && sudo apt install -y libsm6 libxext6 ffmpeg libfontconfig1 libxrender1 libgl1-mesa-glx
 ```
 
-Download & install custom [Hierarchical Localization](https://github.com/KOE-Wayfind/Hierarchical-Localization) package
+Download & install custom [Hierarchical Localization](https://github.com/KOE-Wayfind/Hierarchical-Localization) package. (Slightly modified from version 1.3)
 
 ```bash
 git clone --recursive https://github.com/KOE-Wayfind/Hierarchical-Localization
