@@ -67,11 +67,15 @@ Reconstruction:
 
 ### Start the server
 
+> [!NOTE]
+> The root `requirements.txt` constraints the pycolmap version to `0.4.0`, which will override the hloc dependencies. See issue #3.
+
 ```bash
+pip install -r requirements.txt
 python app.py
 ```
 
-The server will run on localhost:5000
+The server will run on `localhost:5000`
 
 ### Test the API
 
