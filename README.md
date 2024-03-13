@@ -6,11 +6,13 @@ To handle the client request to localize a landmark from image.
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/KOE-Wayfind/AR-server)
 
-Choose 4-core CPU for faster processing (optional).
+Configure the codespace with 4-core CPU for better performance (optional).
 
-This Codespaces is configured with [NVIDIA CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace). It will automatically install cudnn and other dependencies.
+![image](https://github.com/KOE-Wayfind/AR-server/assets/60868965/c49f32a2-6595-45d7-893a-63deab80c54e)
 
-> **Note**
+This Codespaces is configured with [NVIDIA CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace) that uses Codespace's GPU. It will automatically install cudnn and other required dependencies. Configuration file in [devcontainer.json](./.devcontainer/devcontainer.json)
+
+> [!NOTE]
 > Free users have 120 core-hours per month and Pro users have 180 core-hours per month on GitHub Codespaces. The default codespace runs on a 2-core machine, so that's 60 hours (or 90 hours) of free usage per month before getting charged. Make sure to stop your codespace when you're not using it (it automatically stops after 30 minutes of inactivity by default). See more pricing details [here](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces).
 
 ### Setup environment
@@ -43,7 +45,11 @@ git clone https://github.com/KOE-Wayfind/koe-datasets.git
 python my_hloc.py
 ```
 
-This process would take roughly ~10 minutes. At the end, you would get something like:
+This process would take roughly about **8-10 minutes**. It will construct the model from the given image dataset. 
+
+![image](https://github.com/KOE-Wayfind/AR-server/assets/60868965/f26b74e4-948a-4244-8a5b-d8b7c1535bb2)
+
+At the end, you would get something like:
 ```console
 [2023/07/04 02:47:32 hloc INFO] Reconstruction statistics:
 Reconstruction:
@@ -87,7 +93,7 @@ To test with your image, decode the image to Base64. You might want to resize to
 
 ## Add to KOE-Wayfinder App
 
-> **Note**
+> [!NOTE]
 > We are running a development server. Ideally we would want to deploy the server to WSGI server environ (learn more [here](https://flask.palletsprojects.com/en/2.3.x/deploying/)). But since we are just testing, then I think it is okay. 🙈
 
 To assign this server to [KOE-Wayfinder App](https://github.com/KOE-Wayfind/KOE-Wayfinder-App), follow the steps below.
