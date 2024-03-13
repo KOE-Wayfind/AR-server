@@ -1,6 +1,6 @@
 ﻿# AR-server
 
-To handle the client request to localize a landmark from image.
+To localize a landmark from image input.
 
 ## Getting Started
 
@@ -10,12 +10,14 @@ Configure the codespace with 4-core CPU for better performance (optional).
 
 ![image](https://github.com/KOE-Wayfind/AR-server/assets/60868965/c49f32a2-6595-45d7-893a-63deab80c54e)
 
-This Codespaces is configured with [NVIDIA CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace) that uses Codespace's GPU. It will automatically install cudnn and other required dependencies. Configuration file in [devcontainer.json](./.devcontainer/devcontainer.json)
+This Codespaces is configured with [NVIDIA CUDA](https://docs.github.com/en/codespaces/developing-in-codespaces/getting-started-with-github-codespaces-for-machine-learning#configuring-nvidia-cuda-for-your-codespace) that uses **Codespace's GPU**. It will automatically install cudnn and other required dependencies. Configuration file in [devcontainer.json](./.devcontainer/devcontainer.json)
 
 > [!NOTE]
 > Free users have 120 core-hours per month and Pro users have 180 core-hours per month on GitHub Codespaces. The default codespace runs on a 2-core machine, so that's 60 hours (or 90 hours) of free usage per month before getting charged. Make sure to stop your codespace when you're not using it (it automatically stops after 30 minutes of inactivity by default). See more pricing details [here](https://docs.github.com/en/billing/managing-billing-for-github-codespaces/about-billing-for-github-codespaces).
 
 ### Setup environment
+
+Python version at the time of writing: `3.10.13`
 
 Run
 
@@ -121,4 +123,5 @@ Or, in app in localization page, open the **localization setting** and update th
 ## Limitations and known issues
 
 - Sometimes, when you send image from client, the server will respond `400` error or other error. Try kill and restart the server (you may need to do it few times), the server will fix itself. You can also test with Insomnia or Postman to debug the request.
+- The inferencing is slow, which is about 10-20 seconds.
 - The server can handle only one request at a time. _Well technically this Flask server can handle concurrent users_, but the `image` endpoint (localization process) can only run single process at one time.
